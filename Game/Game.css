@@ -1,0 +1,150 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(to right, rgb(253, 187, 187), rgb(238, 206, 146), rgb(238, 238, 161), rgb(196, 240, 196), rgb(238, 238, 161), rgb(238, 206, 146), rgb(253, 187, 187));
+    font-family: 'Arial', sans-serif;
+    perspective: 1000px;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    padding: 2vh 0;
+    position: relative;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: rgb(200, 50, 100);
+    font-size: 5vw;
+    margin: 0;
+}
+
+#startGameButton {
+    font-size: 2.5vw;
+}
+
+#startGameButton:hover {
+    background-color: rgb(170, 220, 170);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+#startGameButton:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+#cardsContainer {
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.allCards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5vw;
+    width: 90vw;
+    padding: 1vw;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card {
+    /* מוגדר בכוונה כך כדי שהיחס יהיה 1:1 */
+    width: 18vh;
+    height: 18vh;
+    border-radius: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    transition: transform 0.6s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    background-image: url("../img/mmmm1.png");
+    background-size: cover;
+}
+
+.card .front,
+.card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card .back {
+    background-color: rgb(170, 220, 170);
+    transform: rotateY(180deg);
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card .back img {
+    max-height: 80%;
+    max-width: 80%;
+    object-fit: contain;
+    display: block;
+}
+
+#successMessage {
+    position: fixed;
+    top: 10vh; 
+    right: 6vw; 
+    font-size: 5vw;
+    color: black;
+    display: none;
+}
+
+#byTime {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 5vw;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+#sets,
+#timer {
+    position: absolute;
+    top: 30%;
+    transform: translateY(-50%);
+    color: rgb(200, 50, 100);
+    font-size: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+#sets {
+    font-size: 2vw;
+    top: 20vh;
+    left: 3vw;
+}
+
+#timer {
+    left: 3vw;
+}

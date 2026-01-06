@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="../LoginAndSignUp.css">
+</head>
+<body>
+    <form action="../Login/Login.html" method="post">
+        <div>
+            <label for="userName">Insert your full name:</label>
+            <input id="userName" name="userName" placeholder="Full Name" pattern="[A-Z][a-z]+ [A-Z][a-z]+"
+                minlength="2" maxlength="20" required>
+        </div>
+        <div>
+            <label for="userID">Insert your ID number:</label>
+            <input id="userID" name="userID" placeholder="123456789" pattern="\d{9}">
+        </div>
+        <div>
+            <label for="userPhone">Insert your user phone:</label>
+            <input id="userPhone" name="userPhone" placeholder="052-345-6789" pattern="\d{3}-\d{3}-\d{4}">
+        </div>
+        <div>
+            <label for="userCode">Insert your code:</label>
+            <input id="userCode" name="userCode" type="password" placeholder="12345" pattern="\d{5,}" required>
+        </div>
+
+        <button type="submit">Sign Up</button>
+    </form>
+
+    <script src="SignUp.JS" type="text/javaScript"></script>
+</body>
+
+</html>

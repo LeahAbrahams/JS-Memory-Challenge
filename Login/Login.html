@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../LoginAndSignUp.css">
+</head>
+
+<body>
+    <form action="../Game/Game.html" method="post">
+        <div>
+            <label for="userName">Insert your user name:</label>
+            <input id="userName" name="userName" placeholder="User Name" pattern="[A-Z][a-z]+ [A-Z][a-z]+"
+                minlength="2" maxlength="20" required>
+        </div>
+        <div>
+            <label for="userCode">Insert your code:</label>
+            <input id="userCode" name="userCode" type="password" placeholder="12345" pattern="\d{5,}" required>
+        </div>
+        <button type="submit">Login</button>
+    </form>
+
+    <script src="Login.JS" type="text/javaScript"></script>
+</body>
+
+</html>
